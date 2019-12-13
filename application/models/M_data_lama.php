@@ -15,6 +15,11 @@ return $query->result();
        $query = $this->db->get('data_pekerjaan');
 return $query;
 }
+
+public function data_user_where($no_user){
+$query = $this->db->get_where('user',array('no_user'=>$no_user));
+return $query;
+}
 public function data_pemilik(){
          $this->db->limit(1);
          $this->db->order_by('data_pemilik.id_data_pemilik','DESC');

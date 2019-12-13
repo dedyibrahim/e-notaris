@@ -6,8 +6,8 @@
 <div class="container-fluid ">
 <?php  $static = $data_user->row_array(); ?>
 <div class="row mt-2">
-<div class="col">
-<div class="text-center p-2 card-header rounded-bottom ">   
+<div class="col-md-6 mx-auto">
+<div class="text-center p-2  rounded-bottom ">   
 <?php if(!file_exists('./uploads/user/'.$static['foto'])){ ?>
 <img style="width:200px; height: 200px;" src="<?php echo base_url('uploads/user/no_profile.jpg') ?>" img="" class="img img-thumbnail" >    
 <?php }else{ ?>
@@ -18,18 +18,15 @@
 <?php } ?> 
 
 <?php } ?>
-<button class="btn btn-success btn-sm  float-right" onclick="upload_profile();"> Update Poto <span class="fa fa-edit"></span></button>
+</div>
 <div id="form_upload_profile" style="display:none;">
 <hr>
 <label>Upload foto</label>
 <input type='file' id="imgInp" class="form-control" />
-
+<hr>
 </div>
-</div>  
-</div>
-
-<div class="col-md-7">
-<table class="table  table-striped table-bordered">
+    
+<table class="table table-sm table-hover  table-striped table-bordered">
 <tr>
 <td>ID</td>
 <td id="id_user"><?php echo $static['no_user'] ?></td>
@@ -64,15 +61,19 @@
 <td><input type="password" class="form-control repeat_password" placeholder="Repeat password..."></td>    
 </tr>
 
-</table>    
-<div class="card-footer text-center">
-<button style="display:none;" class="btn btn-success btn-sm col-md-6 btn_update">Perbaharui Profil</button>  
-<button style="display:none;" class="btn btn-success btn-sm col-md-6 simpan_password">Save Password</button>  
+</table>
+<div class="card text-center">
+    <button style="display:none;" class="btn btn-success btn-sm btn_update">Perbaharui Profil <span class="fa fa-save"></span></button>  
+<button style="display:none;" class="btn btn-success btn-sm simpan_password">Save Password <span class="fa fa-save"></span></button>  
 
-<button class="btn btn-success btn-sm col-md-6 btn_edit">Edit Profil</button>  
-<button class="btn btn-success btn-sm col-md-5 btn_ubah_password">Change Password</button>  
-</div> 
+<button class="btn btn-success btn-sm mt-1 btn_edit">Edit Profil <span class="fa fa-edit"></span></button>  
+<button class="btn btn-success btn-sm mt-1  btn_ubah_password">Change Password <span class="fa fa-edit"></span></button>  
+<button class="btn btn-success btn-sm  mt-1 " onclick="upload_profile();"> Update Poto <span class="fa fa-edit"></span></button>
+</div>    
 </div>
+
+    
+
 
 </div> 
 </div>
@@ -222,10 +223,10 @@ $(".btn_edit").click(function(){
 $(".btn_edit").hide(100); 
 $(".btn_ubah_password").hide(100);
 $(".btn_update").show(100);
-$("#username").replaceWith('<input type="text" class="form-control username" value="'+$("#username").text()+'">');
-$("#nama_lengkap").replaceWith('<input type="text" class="form-control nama_lengkap" value="'+$("#nama_lengkap").text()+'">');
-$("#email").replaceWith('<input type="text" class="form-control email" value='+$("#email").text()+'>');
-$("#phone").replaceWith('<input type="text" class="form-control phone" value='+$("#phone").text()+'>');
+$("#username").replaceWith('<input type="text" class="form-control form-control-sm username" value="'+$("#username").text()+'">');
+$("#nama_lengkap").replaceWith('<input type="text" class="form-control form-control-sm nama_lengkap" value="'+$("#nama_lengkap").text()+'">');
+$("#email").replaceWith('<input type="text" class="form-control form-control-sm email"  value='+$("#email").text()+'>');
+$("#phone").replaceWith('<input type="text" class="form-control form-control-sm phone" value='+$("#phone").text()+'>');
 
 });
 });    

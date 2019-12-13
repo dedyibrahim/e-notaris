@@ -23,9 +23,7 @@ redirect (base_url('Login'));
 
 public function check_akses(){
 if($this->input->post()){
-
 $data = $this->db->get_where('sublevel_user',array('no_user'=>$this->session->userdata('no_user'),'sublevel'=>$this->input->post('model')));
-
 if($data->num_rows() == 1){
 $status = array(
 "status"=>"success",
@@ -44,17 +42,14 @@ $status = array(
 "status"=>"error",
 "pesan"=>"Anda tidak memiliki akses kemenu tersebut "
 );
-
 }
 echo json_encode($status);
-
-
 }else{
 redirect(404);	
+}    
 }
 
-    
-}
+
 
 
     

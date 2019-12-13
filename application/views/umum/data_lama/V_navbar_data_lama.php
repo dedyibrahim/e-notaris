@@ -36,7 +36,6 @@ Pilihan
 </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 <a class="dropdown-item" href="<?php echo base_url('Data_lama/profil') ?>">Profil</a>
-<a class="dropdown-item" href="<?php echo base_url('Data_lama/riwayat_pekerjaan') ?>">Histori pekerjaan</a>
 <div class="dropdown-divider"></div>
 <a class="dropdown-item" href="<?php echo base_url('Data_lama/keluar') ?>">Keluar</a>
 </div>
